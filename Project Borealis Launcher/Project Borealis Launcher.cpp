@@ -9,7 +9,8 @@ int main(int argc, char* argv[])
 	FreeConsole();
 	std::string commandLineStr = "";
 	for (int i = 1; i < argc; i++) commandLineStr.append(argv[i]).append(" ");
-	//commandLineStr.append(" -vulkan"); // " -opengl4", " -vulkan" or " -dx10" or comment out
+	// -vulkanpresentmode=VkPresentModeKHR (0 for no vsync)
+	commandLineStr.append(" -dx12"); // " -opengl4", " -vulkan" or " -dx10" or comment out
 	int slength = (int)commandLineStr.length() + 1;
 	const char* cmdLineCStr = commandLineStr.c_str();
 	int len = MultiByteToWideChar(CP_ACP, 0, cmdLineCStr, slength, 0, 0);
